@@ -1,6 +1,6 @@
 # Hive-partioned Parquet for Mirrulations
 
-This repository demos writing Mirrulations data with a [Hive-partitioned Parquet](https://duckdb.org/docs/stable/data/partitioning/hive_partitioning.html#hive-partitioning) storage strategy. This uses a cloud-optimized file format and structure that enables efficient and fast querying, even directly from cloud object storage.
+This repository demos writing Mirrulations data with a [Hive-partitioned Parquet](https://duckdb.org/docs/stable/data/partitioning/hive_partitioning.html#hive-partitioning) storage strategy. This is an approach for building data lakes that uses a cloud-optimized file format and structure that enables efficient and fast querying, even directly from cloud object storage.
 
 This work was done as part of [Civic Hack DC](https://www.civictechdc.org/events/civichackdc/) in July 2025.
 
@@ -90,7 +90,7 @@ This notebook demos using DuckDB to query the Hive-partioned dataset, including 
 
 ## Some notes about future production implementation
 
-- Some kind of batch job will be needed to continually transform new data from the JSON format into the Hive-partitioned parquet data store.
+- Some kind of batch job will be needed to continually transform new data from the JSON format into the Hive-partitioned Parquet data lake.
 - There are a few different strategies for implementing the transformation job:
     - Distributed processing systems like AWS Glue+AWS Athena or Spark support writing out data both in Parquet and with Hive-partitioning. They can process large datasets quickly through parallelization and a large amount of compute.
     - You could also do it in a more DIY manner using something like DuckDB, which is what this demo used. If this is slow, you'd need to parallelize it and distribute it yourself.
